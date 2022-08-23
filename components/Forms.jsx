@@ -6,6 +6,7 @@ import {
   DatePicker,
   Radio,
   Space,
+  message
 } from "antd";
 import moment from "moment";
 const { Item } = Form;
@@ -17,127 +18,12 @@ const Forms = ({
   UpdateEmployee,
   resetFunction,
 }) => {
+
   const [form] = Form.useForm();
 
   return (
     <>
-      {/* <form>
-      <div className="row">
-              <div className="col">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="First name"
-                  aria-label="First name"
-                  value={userData?.firstname}
-                  name="firstname"
-                  onChange={changeHandler}
-                />
-              </div>
-              <div className="col">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Last name"
-                  aria-label="Last name"
-                  value={userData?.lastname}
-                  name="lastname"
-                  onChange={changeHandler}
-                />
-              </div>
-              <div className="col">
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Email"
-                  aria-label="Email"
-                  value={userData?.email}
-                  name="email"
-                  onChange={changeHandler}
-                />
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col">
-                <input
-                  type="number"
-                  className="form-control"
-                  placeholder="Salary"
-                  aria-label="Salary"
-                  value={userData?.salary}
-                  name="salary"
-                  onChange={changeHandler}
-                />
-              </div>
-              <div className="col">
-                <input
-                  type="date"
-                  className="form-control"
-                  placeholder="Date"
-                  aria-label="Date"
-                  value={userData?.date}
-                  name="date"
-                  onChange={changeHandler}
-                />
-              </div>
-              <div className="col">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="isactive"
-                    id="flexRadioDefault1"
-                    checked={userData?.isactive === "active"}
-                    value="active"
-                    onChange={changeHandler}
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="flexRadioDefault1"
-                  >
-                    active
-                  </label>
-                </div>
-              </div>
-              <div className="col">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="isactive"
-                    id="flexRadioDefault2"
-                    checked={userData?.isactive === "inactive"}
-                    value=ref"inactive"
-                    onChange={changeHandler}
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="flexRadioDefault2"
-                  >
-                    inactive
-                  </label>
-                </div>
-              </div>
-            </div>
-            <buttontypeof
-              type="submit"
-              onClick={(e) => {
-                UpdateEmployee ? editEmployee(e) : submitFunction(e);
-              }}
-              className="btn btn-outline-success"
-            >
-              {" "}
-              {UpdateEmployee ? "edit" : "Add +"}
-            </button>
-            <button 
-              onClick={(e)=>{
-                resetFunction(e);
-              }}
-              className="btn btn-outline-secondary"
-            
-            >Reset</button>
-      </form> */}
+      
       <Form form={form}>
         <Space direction="vertical" size={12}>
           <Space direction="horizontal" size={100}>

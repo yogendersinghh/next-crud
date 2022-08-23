@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Forms from "../components/Forms";
-import { Button, Typography, Divider, Checkbox, Table, Tag } from "antd";
+import { Button, Typography, Divider, Checkbox, Table, Tag ,message} from "antd";
 import "antd/dist/antd.css";
 import moment from "moment";
 
@@ -95,10 +95,12 @@ export default function Home({ data }) {
       isactive: "",
     });
     setUpdateEmployee(false);
+    message.success("Employee Updated Successfully");
   };
   const deleteEmployee = async (e, id) => {
     // e.preventDefault();
     await axios.post(`api/deleteapi/${id}`);
+    message.success("Employee Deleted Successfully");
     setUserList(!userList);
   };
 
@@ -129,6 +131,7 @@ export default function Home({ data }) {
       date: "",
       isactive: "",
     });
+    message.success("Employee Added Successfully");
   };
 
   const checked = (e, id) => {
@@ -148,6 +151,7 @@ export default function Home({ data }) {
     await axios.post(`api/deletemultiple`, { deleteIds });
     setUserList(!userList);
     setDeleteIds([]);
+    message.success("Employees Deleted Successfully");
   };
 
   const resetFunction = (e) => {
