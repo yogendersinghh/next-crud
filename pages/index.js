@@ -112,6 +112,7 @@ export default function Home({ data }) {
     e.preventDefault();
     const { firstname, lastname, email, salary, date, isactive } = userData;
     if (!firstname || !lastname || !email || !salary || !date || !isactive) {
+      message.error("Please fill all the fields");
       return;
     }
     const data = await axios.post("/api/createemployee", {
